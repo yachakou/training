@@ -1,4 +1,4 @@
-package training.arrays;
+package training.algorithms.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class FindPairThatEqualASum {
     }
 
 
-    private static List<Pair<Integer>> findPairsThatEqualsSum(int[] numbers, int sum) {
+    public static List<Pair<Integer>> findPairsThatEqualsSum(int[] numbers, int sum) {
         List<Pair<Integer>> pairs = new ArrayList<>();
 
         for (int i = 0; i < numbers.length; i++) {
@@ -35,8 +35,8 @@ public class FindPairThatEqualASum {
     }
 
     public static class Pair<T> {
-        T x;
-        T y;
+        private T x;
+        private T y;
 
         public Pair(T x, T y) {
             this.x = x;

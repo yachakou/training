@@ -1,4 +1,4 @@
-package training.strings;
+package training.algorithms.strings;
 
 public class ReversStringWithoutAffectingSpecialChar {
 

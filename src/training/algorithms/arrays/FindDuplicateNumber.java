@@ -1,9 +1,10 @@
-package training.arrays;
+package training.algorithms.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
 public class FindDuplicateNumber {
+
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 8, 4, 5, 6, 6, 7, 8, 9, 10};
         int[] numbers2 = {1, 2, 3, 8, 4, 5, 6, 6, 7, 8, 9, 10};
@@ -15,7 +16,7 @@ public class FindDuplicateNumber {
         System.out.println("After removing duplicate number : " + Arrays.toString(removeDupplicateUsingSet(numbers2)));
     }
 
-    private static int[] removeDuplicate(int[] numbers) {
+    public static int[] removeDuplicate(int[] numbers) {
         Arrays.sort(numbers);
 
         int[] result = new int[numbers.length];
@@ -37,7 +38,7 @@ public class FindDuplicateNumber {
         return result;
     }
 
-    private static int[] removeDupplicateUsingSet(int[] numbers) {
+    public static int[] removeDupplicateUsingSet(int[] numbers) {
         HashSet<Integer> result = new HashSet<>();
         Arrays.stream(numbers).forEach(result::add);
         return Arrays.stream(result.toArray(new Integer[0])).mapToInt(i -> i).toArray();
