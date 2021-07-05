@@ -86,5 +86,12 @@ public class LinkedList<T> {
         }
         return lenght;
     }
+
+    public int lenghtRecursive(Node<T> current) {
+        if (current == null) {
+            return 0;
+        }
+        return 1 + lenghtRecursive(current.getNext());
+    }
 }
 

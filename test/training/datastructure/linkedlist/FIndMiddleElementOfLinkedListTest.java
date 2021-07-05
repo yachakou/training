@@ -2,10 +2,11 @@ package training.datastructure.linkedlist;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import training.datastructure.linkedlist.util.AbstractLinkedListNodeFactory;
 import training.datastructure.linkedlist.util.LinkedList;
 import training.datastructure.linkedlist.util.Node;
 
-class FIndMiddleElementOfLinkedListTest {
+class FIndMiddleElementOfLinkedListTest extends AbstractLinkedListNodeFactory {
 
     @Test
     public void fIndMiddleElementOfLinkedListPairNode() {
@@ -33,9 +34,4 @@ class FIndMiddleElementOfLinkedListTest {
 
         Assertions.assertEquals(result.getData(), 3);
     }
-
-    private Node<Integer> createNode(Integer data) {
-        return new Node.Builder<Integer>().withData(data).build();
-    }
-
 }

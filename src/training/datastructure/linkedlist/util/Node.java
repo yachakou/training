@@ -40,7 +40,7 @@ public class Node<T> {
         }
 
         public Node<T> build() {
-            return new Node<T>(data);
+            return new Node<>(data);
         }
     }
 }
