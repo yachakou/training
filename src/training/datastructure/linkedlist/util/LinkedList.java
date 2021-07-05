@@ -93,5 +93,20 @@ public class LinkedList<T> {
         }
         return 1 + lenghtRecursive(current.getNext());
     }
+
+    public boolean isCyclic() {
+        Node<T> fast = head, slow = head;
+
+        while (fast != null && fast.getNext() != null) {
+            fast = fast.getNext().getNext();
+            slow = slow.getNext();
+
+            if (fast == slow){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
