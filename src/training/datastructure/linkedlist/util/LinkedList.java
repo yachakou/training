@@ -1,6 +1,9 @@
 package training.datastructure.linkedlist.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
 public class LinkedList<T> {
 
@@ -101,12 +104,54 @@ public class LinkedList<T> {
             fast = fast.getNext().getNext();
             slow = slow.getNext();
 
-            if (fast == slow){
+            if (fast == slow) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    public void removeDuplicate() {
+        Node<T> loop1 = head, loop2 = null;
+        while (loop1 != null && loop1.getNext() != null) {
+            loop2 = loop1;
+            while (loop2 != null && loop2.getNext() != null) {
+                if (loop1.getData() == loop2.getNext().getData()) {
+                    System.out.println("found duplicate " + loop1.getData());
+                    loop2.setNext(loop2.getNext().getNext());
+                } else {
+                    loop2 = loop2.getNext();
+                }
+            }
+            loop1 = loop1.getNext();
+        }
+    }
+
+    public void removeDuplicate2() {
+        Node<T> current = head, prev = null;
+        HashSet<T> hashSet = new HashSet<>();
+        while (current != null) {
+            T data = current.getData();
+            if (!hashSet.contains(data)) {
+                hashSet.add(data);
+                prev = current;
+            } else {
+                System.out.println("Found duplicate " + data);
+                prev.setNext(current.getNext());
+            }
+            current = current.getNext();
+        }
+    }
+
+    public List<T> getAllData() {
+        List<T> result = new ArrayList<>();
+        Node<T> node = head;
+        while (node != null) {
+            result.add(node.getData());
+            node = node.getNext();
+        }
+        return result;
     }
 }
 
