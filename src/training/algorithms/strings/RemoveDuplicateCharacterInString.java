@@ -17,7 +17,6 @@ public class RemoveDuplicateCharacterInString {
         char[] chars = input.toCharArray();
         Map<Character, Integer> count = new HashMap<>();
 
-
         for (char aChar : chars) {
             if (!count.containsKey(aChar)) {
                 count.put(aChar, 1);
