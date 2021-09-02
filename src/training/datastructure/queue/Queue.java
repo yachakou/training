@@ -1,5 +1,8 @@
 package training.datastructure.queue;
 
+/**
+ * FIFO principle => First In, First Out
+ */
 public class Queue<T> {
 
     private Node<T> head;
