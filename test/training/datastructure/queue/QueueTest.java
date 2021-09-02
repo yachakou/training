@@ -1,6 +1,7 @@
 package training.datastructure.queue;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class QueueTest {
@@ -14,17 +15,22 @@ class QueueTest {
         queue.queue(2);
         queue.queue(3);
         queue.print();
-        dequeueValueAndPrint(queue);
+        Assertions.assertEquals(3, queue.size());
+        Assertions.assertEquals(dequeueValueAndPrint(queue), 1);
+        Assertions.assertEquals(2, queue.size());
         queue.print();
-        dequeueValueAndPrint(queue);
+        Assertions.assertEquals(dequeueValueAndPrint(queue), 2);
+        Assertions.assertEquals(1, queue.size());
         queue.print();
-        dequeueValueAndPrint(queue);
+        Assertions.assertEquals(dequeueValueAndPrint(queue), 3);
+        Assertions.assertEquals(0, queue.size());
         queue.print();
     }
 
-    private void dequeueValueAndPrint(Queue<Integer> queue) {
+    private Integer dequeueValueAndPrint(Queue<Integer> queue) {
         Integer dequeue = queue.dequeue();
         System.out.println("Dequeue value is : " + dequeue);
+        return dequeue;
     }
 
 }

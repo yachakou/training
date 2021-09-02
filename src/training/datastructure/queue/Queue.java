@@ -48,10 +48,20 @@ public class Queue<T> {
             while (current != null) {
                 System.out.println("position : " + position + " , value : " + current.data);
                 current = current.next;
-                position ++;
+                position++;
             }
         } else {
             System.out.println("Queue is empty.");
         }
+    }
+
+    public int size() {
+        int counter = 0;
+        Node<T> current = head;
+        while (current != null) {
+            current = current.next;
+            counter++;
+        }
+        return counter;
     }
 }
