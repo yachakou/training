@@ -62,5 +62,32 @@ public class RecursiveTraining {
 
     }
 
+    public static ListNode reverseList(ListNode head) {
+//        internalReverseList(head);
+        return head;
+    }
+
+    private static ListNode internalReverseList(ListNode previousNode, ListNode head) {
+        if (head == null) {
+            return head;
+        }
+
+        if (head.next == null) {
+//            return head;
+
+
+        }
+        ListNode nextNode = head.next;
+        head.next = previousNode;
+        previousNode = head;
+        if (nextNode != null) {
+            return internalReverseList(previousNode, nextNode);
+        } else {
+            head = previousNode;
+            return head;
+        }
+//        return head;
+    }
+
 
 }

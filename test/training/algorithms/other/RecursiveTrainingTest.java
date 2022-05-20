@@ -28,7 +28,7 @@ class RecursiveTrainingTest {
 
     }
 
-    @Test()
+    @Test
     public void swapPairs() {
         RecursiveTraining.ListNode listNode = new RecursiveTraining.ListNode(1,
                 new RecursiveTraining.ListNode(2,
@@ -48,4 +48,22 @@ class RecursiveTrainingTest {
         }
     }
 
+    @Test
+    public void reverseList() {
+        RecursiveTraining.ListNode listNode = new RecursiveTraining.ListNode(1,
+                new RecursiveTraining.ListNode(2,
+                        new RecursiveTraining.ListNode(3,
+                                new RecursiveTraining.ListNode(4))));
+
+        RecursiveTraining.ListNode result = RecursiveTraining.reverseList(listNode);
+
+        int[] values = {4, 3, 2, 1};
+        int i = 0;
+        RecursiveTraining.ListNode current = result;
+        while (current != null) {
+            Assertions.assertEquals(values[i], current.val);
+            current = current.next;
+            i++;
+        }
+    }
 }
