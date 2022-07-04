@@ -22,4 +22,32 @@ public class RotateArray {
             end--;
         }
     }
+
+    public static int[] rotate2(int[] A, int K) {
+
+        int size = A.length;
+
+        if (size <= 1)
+            return A;
+
+        int rotation = K % size;
+
+        if (rotation == 0)
+            return A;
+
+        int countRotation = 0;
+
+        while (countRotation < rotation) {
+            int temp = A[size - 1];
+            for (int i = size - 1; i > 0; i--) {
+                A[i] = A[i - 1];
+            }
+            A[0] = temp;
+
+            countRotation++;
+        }
+        System.out.println(Arrays.toString(A));
+
+        return A;
+    }
 }
